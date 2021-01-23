@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.noname">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyBenhNhan"></activity>
+        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichSuKham" />
+        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichKham" />
+        <activity android:name=".TrangBenhNhan.Fragment.BenhNhan_ChiTiet_LichSuKhamBenh" />
+        <activity android:name=".TrangBenhNhan.BenhNhan_DoiMatKhau" />
+        <activity android:name=".TrangBacSi.Fragment.Fragment_BacSi_TrangChu" />
+        <activity android:name=".TrangBacSi.Nav_TrangBacSi" />
+        <activity android:name=".TrangBacSi.BacSi_DangNhapBacSi" />
+        <activity android:name=".ChonNguoiDung">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TrangBenhNhan.NCOVI.HuongDanPhongDich" />
+        <activity android:name=".TrangBenhNhan.NCOVI.KhaiBaoYTe" />
+        <activity android:name=".TrangBenhNhan.NCOVI.ThongTinDich" />
+        <activity android:name=".TrangBenhNhan.BenhNhan_DangKyBenhNhan" />
+        <activity android:name=".TrangBenhNhan.BenhNhan_DangNhapBenhNhan" />
+        <activity
+            android:name=".TrangBenhNhan.BenhNhan_ChatVoiBacSi"
+            android:label="@string/title_ChatVoiBacSi" />
+        <activity
+            android:name=".TrangBenhNhan.BenhNhan_PhanAnh"
+            android:label="@string/title_PhanAnh" />
+        <activity
+            android:name=".TrangBenhNhan.BenhNhan_HuongDanSoCapCuu"
+            android:label="@string/title_HuongDanSoCapCuu" />
+        <activity
+            android:name=".TrangBenhNhan.BenhNhan_DangKyKhamBenh"
+            android:label="@string/title_DangKyKhamBenh" />
+        <activity
+            android:name=".TrangBenhNhan.BenhNhan_NCOVI"
+            android:label="@string/title_NCOVI" />
+        <activity
+            android:name=".TrangBenhNhan.Nav_TrangBenhNhan"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

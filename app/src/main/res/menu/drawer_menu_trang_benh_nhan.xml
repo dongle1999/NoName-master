@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_BenhNhan_TrangChu"
+            android:icon="@drawable/ic_trangchu"
+            android:title="@string/title_TrangChu" />
+        <item
+            android:id="@+id/nav_BenhNhan_DatLichKham"
+            android:icon="@drawable/ic_datlichkham"
+            android:title="@string/title_DatLichKham" />
+        <item
+            android:id="@+id/nav_BenhNhan_HoSoBenhNhan"
+            android:icon="@drawable/ic_hoso"
+            android:title="@string/title_HoSoBenhNhan" />
+        <item
+            android:id="@+id/nav_BenhNhan_HoSoBenhLy"
+            android:icon="@drawable/ic_hosobenhly"
+            android:title="@string/title_HoSoBenhLy" />
+        <item
+            android:id="@+id/nav_BenhNhan_LichSuKhamBenh"
+            android:icon="@drawable/ic_lichsu"
+            android:title="@string/title_LichSuKhamBenh" />
+        <item
+            android:id="@+id/nav_BenhNhan_DangXuat"
+            android:icon="@drawable/ic_dangxuat"
+            android:title="@string/title_DangXuat" />
+
+
+    </group>
+</menu>

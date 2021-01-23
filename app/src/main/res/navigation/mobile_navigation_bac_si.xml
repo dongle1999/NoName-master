@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_bac_si"
+    app:startDestination="@+id/nav_BacSi_TrangChu">
+
+    <fragment
+        android:id="@+id/nav_BacSi_TrangChu"
+        android:name="com.example.noname.TrangBacSi.Fragment.Fragment_BacSi_TrangChu"
+        android:label="@string/title_TrangChu"
+        tools:layout="@layout/fragment_bac_si_trang_chu" />
+    <fragment
+        android:id="@+id/nav_BacSi_LichKham"
+        android:name="com.example.noname.TrangBacSi.Fragment.Fragment_BacSi_LichKham"
+        android:label="@string/title_LichKham"
+        tools:layout="@layout/fragment_bac_si_lich_kham" />
+    <fragment
+        android:id="@+id/nav_BacSi_ThemHoSoBenhNhan"
+        android:name="com.example.noname.TrangBacSi.Fragment.Fragment_BacSi_ThemHoSoBenhNhan"
+        android:label="@string/title_ThemHoSoBenhNhan"
+        tools:layout="@layout/fragment_bac_si_them_ho_so_benh_nhan" />
+    <fragment
+        android:id="@+id/nav_BacSi_QuanLyBenhNhan"
+        android:name="com.example.noname.TrangBacSi.Fragment.Fragment_BacSi_QuanLyBenhNhan"
+        android:label="@string/title_QuanLyBenhNhan"
+        tools:layout="@layout/fragment_bac_si_quan_ly_benh_nhan" />
+    <fragment
+        android:id="@+id/nav_BacSi_HoSoBacSi"
+        android:name="com.example.noname.TrangBacSi.Fragment.Fragment_BacSi_HoSoBacSi"
+        android:label="@string/title_HoSoBacSi"
+        tools:layout="@layout/fragment_bac_si_ho_so_bac_si" />
+    <fragment
+        android:id="@+id/nav_BacSi_LichSuKham"
+        android:name="com.example.noname.TrangBacSi.Fragment.Fragment_BacSi_LichSuKham"
+        android:label="@string/title_LichSuKham"
+        tools:layout="@layout/fragment_bac_si_lich_su_kham" />
+    <activity
+        android:id="@+id/nav_BacSi_DangXuat"
+        android:name="com.example.noname.TrangBacSi.BacSi_DangNhapBacSi"
+        android:label="@string/title_DangXuat"
+        tools:layout="@layout/activity_dang_nhap_tk_bac_si" />
+
+</navigation>

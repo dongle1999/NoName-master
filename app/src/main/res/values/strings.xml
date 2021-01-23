@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">NoName</string>
+
+    <string name="navigation_drawer_open">Mở navigation drawer</string>
+    <string name="navigation_drawer_close">Đóng navigation drawer</string>
+
+    //Title
+    <string name="title_TrangChu">Trang chủ</string>
+    <string name="title_HoSoBenhNhan">Hồ sơ bệnh nhân</string>
+    <string name="title_HoSoBacSi">Hồ sơ bác sĩ</string>
+    <string name="title_DatLichKham">Đặt Lịch Khám</string>
+    <string name="title_LichSuKhamBenh">Lịch sử khám bệnh</string>
+    <string name="title_HoSoBenhLy">Hồ sơ bệnh lý</string>
+    <string name="title_LichKham">Lịch khám</string>
+    <string name="title_LichSuKham">Lịch sử khám</string>
+    <string name="title_ThemHoSoBenhNhan">Thêm hồ sơ bệnh nhân</string>
+    <string name="title_QuanLyBenhNhan">Quản lý bệnh nhân</string>
+    <string name="title_BenhNhan">Bệnh nhân</string>
+    <string name="title_BacSi">Bác sĩ</string>
+    <string name="title_NguoiDung">Người dùng</string>
+    <string name="title_ChatVoiBacSi">Chat với bác sĩ</string>
+    <string name="title_NCOVI">NCOVI</string>
+    <string name="title_DangKyKhamBenh">Đăng ký khám bệnh</string>
+    <string name="title_HuongDanSoCapCuu">Hướng dẫn sơ cấp cứu</string>
+    <string name="title_PhanAnh">Phản ánh</string>
+    <string name="title_HuongDanPhongDich">Hướng dẫn phòng dịch</string>
+    <string name="title_KhaiBaoYTe">Khai Báo Y Tế</string>
+    <string name="title_ThongTinDich">Thông tin dịch</string>
+    <string name="title_DangKyBenhNhan">Đăng ký bệnh nhân</string>
+    <string name="title_DangNhapBenhNhan">Đăng nhập bệnh nhân</string>
+    <string name="title_DangNhapBacSi">Đăng nhập bác sĩ</string>
+    <string name="title_HoTen">Họ tên</string>
+    <string name="title_NamSinh">Năm sinh</string>
+    <string name="title_NoiOHienTai">Nơi ở hiện tại</string>
+    <string name="title_QueQuan">Quê quán</string>
+    <string name="title_SoDienThoai">Số điện thoại</string>
+    <string name="title_MatKhau">Mật khẩu</string>
+    <string name="title_XacNhanMatKhau">Xác nhận mật khẩu</string>
+    <string name="title_DangNhap">Đăng nhập</string>
+    <string name="title_DangKy">Đăng ký</string>
+    <string name="title_QuenMatKhau">Quên mật khẩu?</string>
+    <string name="title_KhoaKhamBenh">Khoa Khám Bệnh</string>
+    <string name="title_ChonNgayGio">Chọn ngày, giờ</string>
+    <string name="title_CapNhat">Cập nhật</string>
+    <string name="title_NgayThangNamSinh">Ngày/Tháng/Năm Sinh</string>
+    <string name="title_DangXuat">Đăng xuất</string>
+    <string name="title_MatKhauHienTai">Mật khẩu hiện tại</string>
+    <string name="title_MatKhauMoi">Mật khẩu mới</string>
+    <string name="title_NhapLaiMatKhau">Nhập lại mật khẩu</string>
+    <string name="title_DoiMatKhau">Đổi mật khẩu</string>
+    <string name="title_HoTenBenhNhan">Họ tên bệnh nhân</string>
+    <string name="title_SoLienLacCuaBenhNhan">Số liên lạc của bệnh nhân</string>
+    <string name="title_GioiTinh">Giới tính</string>
+    <string name="title_ThoiGianDangKy">Thời gian đăng ký</string>
+    <string name="title_ThoiGianCapNhat">Thời gian cập nhật</string>
+    <string name="title_HoatDong">Hoạt động</string>
+    <string name="title_NgayDangKyKham">Ngày đăng ký khám:</string>
+    <string name="title_Khoa">Khoa:</string>
+    <string name="title_BacSiKham">Bác sĩ khám:</string>
+    <string name="title_ThoiGianKham">Thời gian khám:</string>
+    <string name="title_TrangThai">Trạng thái</string>
+    <string name="title_KhoaLamViec">Khoa làm việc</string>
+    <string name="title_TuoiBenhNhan">Tuổi bệnh nhân</string>
+    <string name="title_Nam">Nam</string>
+    <string name="title_Nu">Nữ</string>
+    <string name="title_EmailBenhNhan">Email bệnh nhân</string>
+    <string name="title_KhongBatBuoc">(không bắt buộc)</string>
+    <string name="title_ThemHoSo">Thêm hồ sơ</string>
+
+
+</resources>

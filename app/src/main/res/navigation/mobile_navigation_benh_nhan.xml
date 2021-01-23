@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_benh_nhan"
+    app:startDestination="@+id/nav_BenhNhan_TrangChu">
+
+    <fragment
+        android:id="@+id/nav_BenhNhan_TrangChu"
+        android:name="com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_TrangChu"
+        android:label="@string/title_TrangChu"
+        tools:layout="@layout/fragment_benh_nhan_trang_chu" />
+    <fragment
+        android:id="@+id/nav_BenhNhan_DatLichKham"
+        android:name="com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_DatLichKham"
+        android:label="@string/title_DatLichKham"
+        tools:layout="@layout/fragment_benh_nhan_dat_lich_kham" />
+    <fragment
+        android:id="@+id/nav_BenhNhan_HoSoBenhNhan"
+        android:name="com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_HoSoBenhNhan"
+        android:label="@string/title_HoSoBenhNhan"
+        tools:layout="@layout/fragment_benh_nhan_ho_so_benh_nhan" />
+    <fragment
+        android:id="@+id/nav_BenhNhan_HoSoBenhLy"
+        android:name="com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_HoSoBenhLy"
+        android:label="@string/title_HoSoBenhLy"
+        tools:layout="@layout/fragment_benh_nhan_ho_so_benh_ly" />
+    <fragment
+        android:id="@+id/nav_BenhNhan_LichSuKhamBenh"
+        android:name="com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_LichSuKhamBenh"
+        android:label="@string/title_LichSuKhamBenh"
+        tools:layout="@layout/fragment_benh_nhan_lich_su_kham_benh" />
+    <activity
+        android:id="@+id/nav_BenhNhan_DangXuat"
+        android:name="com.example.noname.TrangBenhNhan.BenhNhan_DangNhapBenhNhan"
+        android:label="@string/title_DangXuat"
+        tools:layout="@layout/activity_dang_nhap_tk_benh_nhan" />
+
+
+</navigation>
