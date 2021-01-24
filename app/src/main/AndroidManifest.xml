@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.noname">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,10 +25,11 @@
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichKham" />
         <activity android:name=".TrangBenhNhan.Fragment.BenhNhan_ChiTiet_LichSuKhamBenh" />
         <activity android:name=".TrangBenhNhan.BenhNhan_DoiMatKhau" />
-        <activity android:name=".TrangBacSi.Fragment.Fragment_BacSi_TrangChu" />
         <activity android:name=".TrangBacSi.Nav_TrangBacSi" />
         <activity android:name=".TrangBacSi.BacSi_DangNhapBacSi" />
+        <activity android:name=".ChatBot.MainActivity" />
         <activity android:name=".ChonNguoiDung">
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,6 +59,12 @@
         <activity
             android:name=".TrangBenhNhan.Nav_TrangBenhNhan"
             android:theme="@style/AppTheme.NoActionBar" />
+        <provider
+            android:authorities="${applicationId}.contentprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities"></provider>
     </application>
 
 </manifest>

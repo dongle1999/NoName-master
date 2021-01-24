@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.noname.ChatBot.MainActivity;
 import com.example.noname.R;
 import com.example.noname.TrangBenhNhan.BenhNhan_ChatVoiBacSi;
 import com.example.noname.TrangBenhNhan.BenhNhan_HuongDanSoCapCuu;
@@ -65,7 +66,7 @@ public class Fragment_BenhNhan_TrangChu extends Fragment {
         txtChatVoiBacSi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), BenhNhan_ChatVoiBacSi.class));
+                startActivity(new Intent(getActivity(), MainActivity.class));
             }
         });
     }

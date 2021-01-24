@@ -153,13 +153,13 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {
-                    Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thành Công ! ",Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, Nav_TrangBenhNhan.class));
+                    Toast.makeText(getView().getContext(),"Đăng Nhập Thành Công ! ",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getView().getContext(), Nav_TrangBenhNhan.class));
                 }
 
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
+                Toast.makeText(getView().getContext(),"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
             }
 
             super.onPostExecute(s);
