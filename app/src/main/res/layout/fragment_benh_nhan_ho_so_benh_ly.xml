@@ -48,12 +48,82 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/title_SoLienLacCuaBenhNhan"
+                    android:text="@string/title_SoDienThoai"
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/txtSoLienLac_Fragment_BenhNhan_HoSoBenhLy"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit3"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/title_Email"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtEmail_Fragment_BenhNhan_HoSoBenhLy"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit3"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:textSize="20dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/title_DiaChi"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtDiaChi_Fragment_BenhNhan_HoSoBenhLy"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit3"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:textSize="20dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/title_TuoiBenhNhan"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtTuoi_Fragment_BenhNhan_HoSoBenhLy"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/edit3"

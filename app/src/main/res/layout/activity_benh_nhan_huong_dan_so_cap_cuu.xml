@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TrangBenhNhan.BenhNhan_HuongDanSoCapCuu">
 
-    <TextView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorDefault"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorDefault"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/title_HuongDanSoCapCuu"
+            android:textColor="#ffff"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imgBack_NCOVI"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left|center"
+            android:background="@color/colorDefault"
+            android:src="@drawable/ic_back" />
+        <ImageButton
+            android:id="@+id/imgSearch_NCOVI"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center"
+            android:background="@color/colorDefault"
+            android:src="@drawable/ic_search" />
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/lvBenhNhan_HuongDanSoCapCuu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/title_HuongDanSoCapCuu"
-        android:textSize="30dp"
-        android:gravity="center"/>
+        android:listSelector="@color/colorListView"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -49,15 +49,14 @@
     <string name="title_NhapLaiMatKhau">Nhập lại mật khẩu</string>
     <string name="title_DoiMatKhau">Đổi mật khẩu</string>
     <string name="title_HoTenBenhNhan">Họ tên bệnh nhân</string>
-    <string name="title_SoLienLacCuaBenhNhan">Số liên lạc của bệnh nhân</string>
     <string name="title_GioiTinh">Giới tính</string>
     <string name="title_ThoiGianDangKy">Thời gian đăng ký</string>
     <string name="title_ThoiGianCapNhat">Thời gian cập nhật</string>
     <string name="title_HoatDong">Hoạt động</string>
-    <string name="title_NgayDangKyKham">Ngày đăng ký khám:</string>
-    <string name="title_Khoa">Khoa:</string>
-    <string name="title_BacSiKham">Bác sĩ khám:</string>
-    <string name="title_ThoiGianKham">Thời gian khám:</string>
+    <string name="title_NgayDangKyKham">Ngày đăng ký khám</string>
+    <string name="title_Khoa">Khoa</string>
+    <string name="title_BacSiKham">Bác sĩ khám</string>
+    <string name="title_ThoiGianKham">Thời gian khám</string>
     <string name="title_TrangThai">Trạng thái</string>
     <string name="title_KhoaLamViec">Khoa làm việc</string>
     <string name="title_TuoiBenhNhan">Tuổi bệnh nhân</string>
@@ -66,8 +65,15 @@
     <string name="title_EmailBenhNhan">Email bệnh nhân</string>
     <string name="title_KhongBatBuoc">(không bắt buộc)</string>
     <string name="title_ThemHoSo">Thêm hồ sơ</string>
+    <string name="title_SoDienThoaiBenhNhan">Số điện thoại bệnh nhân</string>
+    <string name="title_DiaChi">Địa chỉ</string>
+    <string name="title_Email">Email</string>
 
 
     <string name="what_s_on_your_mind">Enter your query</string>
     <string name="menu_refresh">Refresh</string>
+    <string name="title_TenBacSi">Tên bác sĩ</string>
+    <string name="title_ThanhToan">Thanh toán</string>
+    <string name="title_ThoiGianDatLich">Thời gian đặt lịch</string>
+    <string name="title_ThoiGianHenKham">Thời gian hẹn khám</string>
 </resources>

@@ -39,6 +39,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_BacSiKham"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"/>
 
                 <TextView
                     android:id="@+id/txtBacSiKham_CustomLv_BenhNhan_LichSuKhamBenh"
@@ -58,6 +62,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_Khoa"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"/>
 
                 <TextView
                     android:id="@+id/txtKhoa_CustomLv_BenhNhan_LichSuKhamBenh"
@@ -80,6 +88,11 @@
                     android:layout_gravity="bottom"
                     android:text="@string/title_NgayDangKyKham"
                     android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text=":"/>
 
                 <TextView
                     android:id="@+id/txtNgayDangKy_CustomLv_BenhNhan_LichSuKhamBenh"

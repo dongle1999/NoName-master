@@ -36,15 +36,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_SoDienThoai"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":" />
 
                 <TextView
                     android:id="@+id/txtSoDienThoai_CustomLv_BacSi_LichKham"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:textStyle=""
-                    android:text="Số điện thoại" />
+                    android:text="Số điện thoại"
+                    android:textStyle="" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,7 +63,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:text="@string/title_ThoiGianKham"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text=":" />
 
                 <TextView
                     android:id="@+id/txtNgayKham_CustomLv_BacSi_LichKham"
@@ -67,6 +78,7 @@
                     android:layout_gravity="bottom"
                     android:layout_marginLeft="3dp"
                     android:text="ngày/tháng/năm" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,6 +86,7 @@
                     android:layout_marginLeft="3dp"
                     android:layout_marginRight="3dp"
                     android:text="|" />
+
                 <TextView
                     android:id="@+id/txtThoiGianKham_CustomLv_BacSi_LichKham"
                     android:layout_width="wrap_content"

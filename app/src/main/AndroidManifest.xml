@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyBenhNhan"></activity>
+        <activity android:name=".TrangBenhNhan.BenhNhan_ChiTiet_HuongDanSoCapCuu"></activity>
+        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyBenhNhan" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichSuKham" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichKham" />
         <activity android:name=".TrangBenhNhan.Fragment.BenhNhan_ChiTiet_LichSuKhamBenh" />
@@ -29,7 +31,6 @@
         <activity android:name=".TrangBacSi.BacSi_DangNhapBacSi" />
         <activity android:name=".ChatBot.MainActivity" />
         <activity android:name=".ChonNguoiDung">
-            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,12 +60,13 @@
         <activity
             android:name=".TrangBenhNhan.Nav_TrangBenhNhan"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <provider
-            android:authorities="${applicationId}.contentprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.contentprovider"
             android:exported="false"
             android:grantUriPermissions="true"
-            tools:replace="android:authorities"></provider>
+            tools:replace="android:authorities" />
     </application>
 
 </manifest>
