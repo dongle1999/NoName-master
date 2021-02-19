@@ -60,7 +60,7 @@ public class Fragment_BenhNhan_HoSoBenhNhan extends Fragment {
         restoringPreferences();
         if(!id.equals("")) {
             Log.e("id",id);
-            new Getuser(id).execute("http://apiheal.000webhostapp.com/api//Registration");
+            new Getuser(id).execute("http://apiheal.000webhostapp.com/api/Registration");
         }
         events();
         return view;
