@@ -84,7 +84,7 @@
                     android:id="@+id/textView"
                     android:layout_width="105dp"
                     android:layout_height="wrap_content"
-                    android:text="GIá "
+                    android:text="Giá "
                     android:textSize="24sp" />
 
                 <TextView

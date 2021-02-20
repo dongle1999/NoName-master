@@ -95,7 +95,7 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
                 // POST Request
                 JSONObject postDataParams = new JSONObject();
                 postDataParams.put("ApiKey", "DENTALMEDICAL");
-                postDataParams.put("email",name);
+                postDataParams.put("docEmail",name);
                 postDataParams.put("password",pass);
 
                 return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/LoginDoctor",postDataParams);

@@ -3,6 +3,7 @@ package com.example.noname.TrangBenhNhan.Fragment;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,18 +39,20 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class Fragment_BenhNhan_DatLichKham extends Fragment {
 
-    TextView txtNgay, txtGio;
+    TextView txtNgay, txtGio,txtgia;
     Button btnDatLich;
     Calendar calendar=Calendar.getInstance();
     SimpleDateFormat sdfNgay=new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat sdfGio=new SimpleDateFormat("HH:mm");
-    ArrayList<String> khoa ;
+    ArrayList<String> khoa ,idkhoa;
     ArrayList<bacSi> bs ;
     Spinner spKhoaKhamBenh, spBacSi;
     String prefname="my_data";
-
+    String st1,usid ;
 
     @Nullable
     @Override
@@ -61,16 +64,25 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
         txtNgay=view.findViewById(R.id.txtNgay_BenhNhan_DatLichKham);
         txtGio=view.findViewById(R.id.txtGio_BenhNhan_DatLichKham);
         btnDatLich=view.findViewById(R.id.btnDatLich_BenhNhan_DatLichKham);
+        txtgia=view.findViewById(R.id.txtgia);
         calendar=Calendar.getInstance();
         txtNgay.setText(sdfNgay.format(calendar.getTime()));
         txtGio.setText(sdfGio.format(calendar.getTime()));
+        restoringPreferences();
         new getKhoa().execute("http://apiheal.000webhostapp.com/api/GetDotorspec");
 
         events();
         return view;
 
     }
+    public void restoringPreferences()
+    {
+        SharedPreferences pre=this.getActivity().getSharedPreferences
+                (prefname, MODE_PRIVATE); //lấy user, pwd, nếu không thấy giá trị mặc định là rỗng
+        usid=pre.getString("id", "");
 
+
+    }
     private void events() {
         txtNgay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,11 +101,31 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                String a = spKhoaKhamBenh.getItemAtPosition(position).toString();
               new GetBs(a).execute("http://apiheal.000webhostapp.com/api/GetDotorspec");
+
            }
 
            @Override
            public void onNothingSelected(AdapterView<?> parent) {
 
+           }
+       });
+       spBacSi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+           @Override
+           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               bacSi a = (bacSi) spBacSi.getItemAtPosition(position);
+               txtgia.setText(a.getFeed());
+               st1=a.getId();
+           }
+
+           @Override
+           public void onNothingSelected(AdapterView<?> parent) {
+
+           }
+       });
+       btnDatLich.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+            new datLichKham().execute("http://apiheal.000webhostapp.com/api/Addappointment");
            }
        });
     }
@@ -160,6 +192,7 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
         protected void onPostExecute(String s) {
             Log.e("chuoi tra ve :", s);
             try {
+
                 khoa = new ArrayList<>();
                 JSONObject jsonObject = new JSONObject(s);
                 JSONArray jsonArray = jsonObject.getJSONArray("data");
@@ -167,10 +200,57 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
                     JSONObject a = jsonArray.getJSONObject(i);
                     khoa.add(a.getString("specilization"));
 
+
                 }
                 ArrayAdapter<String> adapter = new ArrayAdapter(getView().getContext(), android.R.layout.simple_spinner_item, khoa);
                 adapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
                 spKhoaKhamBenh.setAdapter(adapter);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Toast.makeText(getView().getContext(), "Có lỗi xảy ra !", Toast.LENGTH_LONG).show();
+            }
+
+            super.onPostExecute(s);
+        }
+    }
+    class datLichKham extends AsyncTask<String, JSONObject,String> {
+
+
+        public datLichKham() {
+
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+
+
+                // POST Request
+                JSONObject postDataParams = new JSONObject();
+                postDataParams.put("ApiKey", "DENTALMEDICAL");
+                postDataParams.put("doctorSpecialization", spKhoaKhamBenh.getSelectedItem().toString());
+                postDataParams.put("doctorId", st1);
+                postDataParams.put("userId", usid);
+                postDataParams.put("consultancyFees", txtgia.getText().toString());
+                postDataParams.put("appointmentTime", txtGio.getText().toString());
+                postDataParams.put("appointmentDate", txtNgay.getText().toString());
+
+                return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/Addappointment", postDataParams);
+            } catch (Exception e) {
+                return new String("Exception: " + e.getMessage());
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            Log.e("chuoi tra ve dat lich:", s);
+            try {
+                JSONObject jsonObject = new JSONObject(s);
+                if(jsonObject.getString("result").equals("ok"))
+                {
+                    Toast.makeText(getView().getContext(),"Đặt lịch khám thành công !",Toast.LENGTH_LONG).show();
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -192,8 +272,6 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
             @Override
             protected String doInBackground(String... strings) {
                 try {
-
-
                     // POST Request
                     JSONObject postDataParams = new JSONObject();
                     postDataParams.put("ApiKey", "DENTALMEDICAL");
@@ -217,6 +295,7 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
                         bacSi b = new bacSi();
                         b.setId(a.getString("id"));
                         b.setName(a.getString("doctorName"));
+                        b.setFeed(a.getString("docFees"));
                         bs.add(b);
 
                     }
@@ -234,12 +313,21 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
         }
      public    class  bacSi
         {
-            private  String id ,name ;
+            private  String id ,name,feed ;
             public  bacSi(){}
-            public bacSi(String id , String name)
+            public bacSi(String id , String name,String feed)
             {
                 this.id=id ;
                 this.name=name;
+                this.feed=feed;
+            }
+
+            public String getFeed() {
+                return feed;
+            }
+
+            public void setFeed(String feed) {
+                this.feed = feed;
             }
 
             public String getId() {
