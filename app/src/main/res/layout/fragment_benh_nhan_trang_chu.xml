@@ -90,7 +90,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/edit"
                     android:gravity="center"
-                    android:text="@string/title_PhanAnh"
+                    android:text="BluScan"
                     android:textSize="20dp" />
 
                 <TextView
