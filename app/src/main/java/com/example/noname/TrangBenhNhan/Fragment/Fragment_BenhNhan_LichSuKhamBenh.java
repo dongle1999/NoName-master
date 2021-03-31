@@ -47,7 +47,6 @@ public class Fragment_BenhNhan_LichSuKhamBenh extends Fragment{
             }
         });
 
-
         return view;
     }
 

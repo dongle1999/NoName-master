@@ -220,16 +220,15 @@
 
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/edit3">
 
-                    <TextView
-                        android:id="@+id/txtSoDienThoai_Fragment_BenhNhan_HoSoBenhNhan"
+                    <ListView
+                        android:id="@+id/lvFragment_BenhNhan_HoSoBenhLy"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:padding="5dp"
-                        android:textSize="20dp" />
+                        android:listSelector="@color/colorListView"
+                        />
                 </ScrollView>
             </LinearLayout>
         </LinearLayout>
