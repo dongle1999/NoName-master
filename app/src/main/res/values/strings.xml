@@ -76,4 +76,12 @@
     <string name="title_ThanhToan">Thanh toán</string>
     <string name="title_ThoiGianDatLich">Thời gian đặt lịch</string>
     <string name="title_ThoiGianHenKham">Thời gian hẹn khám</string>
+    <string name="title_LichSuHoatDong">Lịch sử hoạt động</string>
+    <string name="title_NgayCapNhat">Ngày cập nhật</string>
+    <string name="title_LanKham">Lần khám</string>
+    <string name="title_HuyetAp">Huyết áp</string>
+    <string name="title_CanNang">Cân nặng</string>
+    <string name="title_DuongHuyet">Đường huyết</string>
+    <string name="title_NhietDoCoThe">Nhiệt độ cơ thể</string>
+    <string name="title_DonThuoc">Đơn thuốc</string>
 </resources>

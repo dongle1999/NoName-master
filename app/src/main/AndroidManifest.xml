@@ -29,7 +29,7 @@
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyBenhNhan" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichSuKham" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichKham" />
-        <activity android:name=".TrangBenhNhan.Fragment.BenhNhan_ChiTiet_LichSuKhamBenh" />
+        <activity android:name=".TrangBenhNhan.Fragment.BenhNhan_ChiTiet_HoSoBenhLy" />
         <activity android:name=".TrangBenhNhan.BenhNhan_DoiMatKhau" />
         <activity android:name=".TrangBacSi.Nav_TrangBacSi" />
         <activity android:name=".TrangBacSi.BacSi_DangNhapBacSi" />

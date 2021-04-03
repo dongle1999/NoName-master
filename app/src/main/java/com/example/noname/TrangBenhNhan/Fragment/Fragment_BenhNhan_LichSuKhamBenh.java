@@ -40,12 +40,7 @@ public class Fragment_BenhNhan_LichSuKhamBenh extends Fragment{
                 R.layout.custom_listview_benh_nhan_lich_su_kham_benh,dsLichSu);
 
         lvLichSuKhamBenh.setAdapter(lichSuAdapter);
-        lvLichSuKhamBenh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(), BenhNhan_ChiTiet_LichSuKhamBenh.class));
-            }
-        });
+
 
         return view;
     }
