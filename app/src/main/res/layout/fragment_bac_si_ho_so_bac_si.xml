@@ -165,7 +165,7 @@
             <Button
                 android:id="@+id/btnDangKy_DangKy_BenhNhan"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="32dp"
                 android:layout_gravity="center"
                 android:layout_margin="40dp"
                 android:background="@drawable/button2"
