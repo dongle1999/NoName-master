@@ -85,4 +85,5 @@
     <string name="title_NhietDoCoThe">Nhiệt độ cơ thể</string>
     <string name="title_DonThuoc">Đơn thuốc</string>
     <string name="title_NgayGioDangKy">Ngày giờ đăng ký</string>
+    <string name="title_BluScan">BluScan</string>
 </resources>

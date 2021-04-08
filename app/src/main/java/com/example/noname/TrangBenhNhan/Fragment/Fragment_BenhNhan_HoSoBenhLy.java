@@ -40,12 +40,6 @@ public class Fragment_BenhNhan_HoSoBenhLy extends Fragment {
                 R.layout.custom_listview_benh_nhan_ho_so_benh_ly,dsHoSo);
 
         lvHoSoBenhLy.setAdapter(hoSoAdapter);
-        lvHoSoBenhLy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(), BenhNhan_ChiTiet_HoSoBenhLy.class));
-            }
-        });
 
 
         return view;
