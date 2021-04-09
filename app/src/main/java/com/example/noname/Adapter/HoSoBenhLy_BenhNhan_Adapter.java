@@ -42,7 +42,7 @@ public class HoSoBenhLy_BenhNhan_Adapter extends ArrayAdapter<HoSoBenhLy_BenhNha
         HoSoBenhLy_BenhNhan hoSo=this.objects.get(position);
         txtLanKham.setText(hoSo.getLanKham());
         txtNgayKham.setText(hoSo.getNgayKham());
-        txtThoiGianKham.setText(hoSo.getthoiGianKham());
+
 
         return row;
     }

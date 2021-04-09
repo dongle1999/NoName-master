@@ -128,6 +128,7 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
                     Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thành Công ! ",Toast.LENGTH_LONG).show();
                     savingPreferences(tdn.getText().toString(),jsonObject.getString("id"));
                     startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, Nav_TrangBenhNhan.class));
+                    finish();
                 }
                 else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
             } catch (JSONException e) {

@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class HoSoBenhLy_BenhNhan implements Serializable {
     private int ma;
-    private String lanKham, ngayKham, thoiGianKham;
+    private String lanKham, ngayKham ;
 
     public HoSoBenhLy_BenhNhan() {
     }
 
-    public HoSoBenhLy_BenhNhan(int ma, String lanKham, String ngayKham, String thoiGianKham) {
+    public HoSoBenhLy_BenhNhan(int ma, String lanKham, String ngayKham) {
         this.ma = ma;
         this.lanKham = lanKham;
         this.ngayKham = ngayKham;
-        this.thoiGianKham = thoiGianKham;
+
     }
 
     public int getMa() {
@@ -40,11 +40,4 @@ public class HoSoBenhLy_BenhNhan implements Serializable {
         this.ngayKham = ngayKham;
     }
 
-    public String getthoiGianKham() {
-        return thoiGianKham;
-    }
-
-    public void setthoiGianKham(String thoiGianKham) {
-        this.thoiGianKham = thoiGianKham;
-    }
 }

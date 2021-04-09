@@ -7,7 +7,6 @@ import android.os.SystemClock;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
 public class ConnectedThread extends Thread {
     private final BluetoothSocket mmSocket;
     private final InputStream mmInStream;
@@ -54,6 +53,7 @@ public class ConnectedThread extends Thread {
                 break;
             }
         }
+
     }
 
     /* Call this from the main activity to send data to the remote device */

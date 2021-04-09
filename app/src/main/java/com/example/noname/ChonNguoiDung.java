@@ -27,6 +27,7 @@ public class ChonNguoiDung extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChonNguoiDung.this, BenhNhan_DangNhapBenhNhan.class));
+                finish();
             }
         });
 
@@ -34,6 +35,7 @@ public class ChonNguoiDung extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChonNguoiDung.this, BacSi_DangNhapBacSi.class));
+                finish();
             }
         });
 
