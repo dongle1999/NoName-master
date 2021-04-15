@@ -2,6 +2,7 @@ package com.example.noname.TrangBenhNhan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -26,11 +27,14 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
     ImageButton imgBack_DangNhapBenhNhan;
     EditText tdn , pass ;
     String prefname="my_data";
+    ProgressDialog progress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dang_nhap_tk_benh_nhan);
         controls();
+        progress=new ProgressDialog(BenhNhan_DangNhapBenhNhan.this);
+        progress.setTitle("Loading");
         events();
     }
 
@@ -39,6 +43,7 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
+                    progress.show();
                     String us = tdn.getText().toString().trim();
                     String pas = pass.getText().toString().trim();
                     new login(us, pas).execute("http://dentalmedical.ddns.net:8088/api/Login");
@@ -125,6 +130,7 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {
+                    progress.dismiss();
                     Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thành Công ! ",Toast.LENGTH_LONG).show();
                     savingPreferences(tdn.getText().toString(),jsonObject.getString("id"));
                     startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, Nav_TrangBenhNhan.class));
@@ -132,6 +138,7 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
                 }
                 else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
             } catch (JSONException e) {
+                progress.dismiss();
                 e.printStackTrace();
                 Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
             }

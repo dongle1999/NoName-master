@@ -37,13 +37,13 @@ public class LichSuKhamBenh_BenhNhan_Adapter extends ArrayAdapter<LichSuKhamBenh
         LayoutInflater inflater=this.context.getLayoutInflater();
         View row=inflater.inflate(this.resource,null);
 
-        TextView txtTenBenhNhan=row.findViewById(R.id.txtTenBenhNhan_CustomLv_BenhNhan_LichSuKhamBenh);
+       TextView txttrangthai=row.findViewById(R.id.txtKhoa_CustomLv_BenhNhan_Trangthai);
         TextView txtBacSiKham=row.findViewById(R.id.txtBacSiKham_CustomLv_BenhNhan_LichSuKhamBenh);
         TextView txtKhoa=row.findViewById(R.id.txtKhoa_CustomLv_BenhNhan_LichSuKhamBenh);
         TextView txtNgay=row.findViewById(R.id.txtNgayDangKy_CustomLv_BenhNhan_LichSuKhamBenh);
 
         LichSuKhamBenh_BenhNhan lichSu=this.objects.get(position);
-        txtTenBenhNhan.setText(lichSu.getTenBenhNhan());
+        txttrangthai.setText(lichSu.getTrangthai());
         txtBacSiKham.setText(lichSu.getBacSiKham());
         txtKhoa.setText(lichSu.getKhoa());
         txtNgay.setText(lichSu.getNgayDangKy());

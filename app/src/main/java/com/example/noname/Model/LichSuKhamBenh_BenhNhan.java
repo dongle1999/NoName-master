@@ -5,14 +5,14 @@ import java.io.Serializable;
 public class LichSuKhamBenh_BenhNhan implements Serializable {
 
     private int ma;
-    private String tenBenhNhan, bacSiKham, khoa, ngayDangKy;
+    private String bacSiKham, khoa, ngayDangKy,trangthai;
 
     public LichSuKhamBenh_BenhNhan() {
     }
 
-    public LichSuKhamBenh_BenhNhan(int ma, String tenBenhNhan, String bacSiKham, String khoa, String ngayDangKy) {
+    public LichSuKhamBenh_BenhNhan(int ma,  String bacSiKham, String khoa, String ngayDangKy,String tenBenhNhan) {
         this.ma = ma;
-        this.tenBenhNhan = tenBenhNhan;
+        this.trangthai = tenBenhNhan;
         this.bacSiKham = bacSiKham;
         this.khoa = khoa;
         this.ngayDangKy = ngayDangKy;
@@ -26,12 +26,12 @@ public class LichSuKhamBenh_BenhNhan implements Serializable {
         this.ma = ma;
     }
 
-    public String getTenBenhNhan() {
-        return tenBenhNhan;
+    public String getTrangthai() {
+        return trangthai;
     }
 
-    public void setTenBenhNhan(String tenBenhNhan) {
-        this.tenBenhNhan = tenBenhNhan;
+    public void setTrangthai(String trangthai) {
+        this.trangthai = trangthai;
     }
 
     public String getBacSiKham() {

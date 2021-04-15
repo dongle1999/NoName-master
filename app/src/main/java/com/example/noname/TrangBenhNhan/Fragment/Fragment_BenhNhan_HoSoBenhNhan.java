@@ -1,6 +1,7 @@
 package com.example.noname.TrangBenhNhan.Fragment;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -44,6 +45,7 @@ public class Fragment_BenhNhan_HoSoBenhNhan extends Fragment {
     String prefname="my_data";
     String id ;
     Button btnDangKy_DangKy_BenhNhan;
+    ProgressDialog dialog;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,6 +60,8 @@ public class Fragment_BenhNhan_HoSoBenhNhan extends Fragment {
         nu=view.findViewById(R.id.rdNu_Fragment_BenhNhan_HoSoBenhNhan);
         btnDangKy_DangKy_BenhNhan=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan);
         restoringPreferences();
+        dialog=new ProgressDialog(getActivity());
+        dialog.setTitle("Vui lòng đợi trong giây lát !");
         if(!id.equals("")) {
             Log.e("id",id);
             new Getuser(id).execute("http://apiheal.000webhostapp.com/api/Registration");
@@ -84,6 +88,7 @@ public class Fragment_BenhNhan_HoSoBenhNhan extends Fragment {
             @Override
             public void onClick(View v) {
                 if(!id.equals("")) {
+                    dialog.show();
                     Log.e("id",id);
                     new Edituser().execute("http://apiheal.000webhostapp.com/api//Registration");
                 }else  Toast.makeText(getView().getContext(),"Có lỗi xảy ra !",Toast.LENGTH_LONG).show();
@@ -223,11 +228,17 @@ public class Fragment_BenhNhan_HoSoBenhNhan extends Fragment {
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {
+                    dialog.dismiss();
                     Toast.makeText(getView().getContext(),"Sửa thông tin thành công!",Toast.LENGTH_LONG).show();
 
                 }
-                else Toast.makeText(getView().getContext(),"Sửa thông tin thất bại !",Toast.LENGTH_LONG).show();
+                else
+                {
+                    dialog.dismiss();
+                    Toast.makeText(getView().getContext(),"Sửa thông tin thất bại !",Toast.LENGTH_LONG).show();
+                }
             } catch (JSONException e) {
+                dialog.dismiss();
                 e.printStackTrace();
                 Toast.makeText(getView().getContext(),"Có lỗi xảy ra !",Toast.LENGTH_LONG).show();
             }

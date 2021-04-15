@@ -2,6 +2,7 @@ package com.example.noname.TrangBacSi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -28,6 +29,7 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
     EditText tdn , pass ;
     ImageButton imgBack_DangNhapBacSi;
     String prefname="my_data";
+    ProgressDialog dialog ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +39,13 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
         imgBack_DangNhapBacSi=findViewById(R.id.imgBack_DangNhapBacSi);
         tdn=findViewById(R.id.edtSoDienThoai_DangNhap_BacSi);
         pass=findViewById(R.id.edtMatKhau_DangNhap_BacSi);
+        dialog=new ProgressDialog(BacSi_DangNhapBacSi.this);
+        dialog.setTitle("Loading");
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
+                    dialog.show();
                     String us = tdn.getText().toString().trim();
                     String pas = pass.getText().toString().trim();
                     new login(us, pas).execute("http://dentalmedical.ddns.net:8088/api/LoginDoctor");
@@ -113,12 +118,17 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {
+                    dialog.dismiss();
                     Toast.makeText(BacSi_DangNhapBacSi.this,"Đăng Nhập Thành Công ! ",Toast.LENGTH_LONG).show();
                     savingPreferences(tdn.getText().toString(),jsonObject.getString("id"));
                     startActivity(new Intent(BacSi_DangNhapBacSi.this, Nav_TrangBacSi.class));
                 }
-                else Toast.makeText(BacSi_DangNhapBacSi.this,"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
+                else {
+                    dialog.dismiss();
+                    Toast.makeText(BacSi_DangNhapBacSi.this,"Đăng Nhập Thất Bại !",Toast.LENGTH_LONG).show();
+                }
             } catch (JSONException e) {
+                dialog.dismiss();
                 e.printStackTrace();
                 Toast.makeText(BacSi_DangNhapBacSi.this,"Có lỗi xảy ra !",Toast.LENGTH_LONG).show();
             }

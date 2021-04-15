@@ -1,6 +1,7 @@
 package com.example.noname.TrangBenhNhan.Fragment;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -53,7 +54,7 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
     Spinner spKhoaKhamBenh, spBacSi;
     String prefname="my_data";
     String st1,usid ;
-
+    ProgressDialog dialog;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -70,7 +71,8 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
         txtGio.setText(sdfGio.format(calendar.getTime()));
         restoringPreferences();
         new getKhoa().execute("http://apiheal.000webhostapp.com/api/GetDotorspec");
-
+        dialog=new ProgressDialog(getActivity());
+        dialog.setTitle("Vui lòng đợi trong giây lát !");
         events();
         return view;
 
@@ -125,6 +127,7 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
        btnDatLich.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               dialog.show();
             new datLichKham().execute("http://apiheal.000webhostapp.com/api/Addappointment");
            }
        });
@@ -233,9 +236,8 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
                 postDataParams.put("doctorId", st1);
                 postDataParams.put("userId", usid);
                 postDataParams.put("consultancyFees", txtgia.getText().toString());
-                postDataParams.put("appointmentTime", txtGio.getText().toString());
                 postDataParams.put("appointmentDate", txtNgay.getText().toString());
-
+                postDataParams.put("appointmentTime", txtGio.getText().toString());
                 return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/Addappointment", postDataParams);
             } catch (Exception e) {
                 return new String("Exception: " + e.getMessage());
@@ -246,13 +248,16 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
         protected void onPostExecute(String s) {
             Log.e("chuoi tra ve dat lich:", s);
             try {
+
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {
+                    dialog.dismiss();
                     Toast.makeText(getView().getContext(),"Đặt lịch khám thành công !",Toast.LENGTH_LONG).show();
                 }
 
             } catch (JSONException e) {
+                dialog.dismiss();
                 e.printStackTrace();
                 Toast.makeText(getView().getContext(), "Có lỗi xảy ra !", Toast.LENGTH_LONG).show();
             }
