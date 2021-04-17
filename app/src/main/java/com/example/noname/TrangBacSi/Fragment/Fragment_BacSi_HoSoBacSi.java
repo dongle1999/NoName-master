@@ -1,6 +1,8 @@
 package com.example.noname.TrangBacSi.Fragment;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,19 +23,22 @@ import com.example.noname.R;
 import com.example.noname.RequestHandler;
 import com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_HoSoBenhNhan;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Fragment_BacSi_HoSoBacSi extends Fragment {
+import static android.content.Context.MODE_PRIVATE;
 
+public class Fragment_BacSi_HoSoBacSi extends Fragment {
+    ProgressDialog progressDialog;
     TextView txtNamSinh;
     EditText edtHoTen,edtKhoa,edtDiaChi,edtQueQuan,edtSdt;
-    Button btnCapNhap;
+    Button btnCapNhap,btndoipass;
     String prefname="my_data";
-    String id ;
+    String id="" ;
     Calendar calendar=Calendar.getInstance();
     SimpleDateFormat sdfNgay=new SimpleDateFormat("dd/MM/yyyy");
 
@@ -41,37 +46,38 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_bac_si_ho_so_bac_si, container,false);
-        txtNamSinh=view.findViewById(R.id.txtNamSinh_Fragment_BacSi_HoSoBacSi);
         edtHoTen=view.findViewById(R.id.edtHoTen_Fragment_BacSi_HoSoBacSi);
         edtKhoa=view.findViewById(R.id.edtKhoa_Fragment_BacSi_HoSoBacSi);
         edtDiaChi=view.findViewById(R.id.edtNoiOHienTai_Fragment_BacSi_HoSoBacSi);
         edtQueQuan=view.findViewById(R.id.edtQUeQuan_Fragment_BacSi_HoSoBacSi);
         edtSdt=view.findViewById(R.id.edtSoDienThoai_Fragment_BacSi_HoSoBacSi);
+        btnCapNhap=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan);
+        btndoipass=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan2);
         restoringPreferences();
+        progressDialog=new ProgressDialog(getActivity());
         if(!id.equals("")) {
-            Log.e("id",id);
+
             new Getdoctor(id).execute("http://apiheal.000webhostapp.com/api/GetListDotor");
         }
-        events();
+      events();
         return view;
     }
 
-    private void restoringPreferences() {
+    public void restoringPreferences()
+    {
+        SharedPreferences pre=this.getActivity().getSharedPreferences
+                (prefname, MODE_PRIVATE); //lấy user, pwd, nếu không thấy giá trị mặc định là rỗng
+        id=pre.getString("id", "");
+
     }
 
     private void events() {
-        txtNamSinh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                xuLyHienThiNgay();
-            }
-        });
         btnCapNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!id.equals("")) {
-                    Log.e("id",id);
-                    new Fragment_BacSi_HoSoBacSi.EditDoc().execute("http://apiheal.000webhostapp.com/api//Registration");
+
+                    new EditDoc().execute("Sua thong tin bac si");
                 }else  Toast.makeText(getView().getContext(),"Có lỗi xảy ra !",Toast.LENGTH_LONG).show();
             }
         });
@@ -112,7 +118,7 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
                 postDataParams.put("ApiKey", "DENTALMEDICAL");
                 postDataParams.put("id", id);
 
-                return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/GetListDotor",postDataParams);
+                return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/Getinfodoctor",postDataParams);
             }
             catch(Exception e){
                 return new String("Exception: " + e.getMessage());
@@ -124,26 +130,15 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
             try {
                 Log.e("lấy thông tin doctor",s);
                 JSONObject jsonObject = new JSONObject(s);
-                if(jsonObject.getString("result").equals("ok"))
-                {
-                    if(jsonObject.getString("fullName")!=null){
-                        edtHoTen.setText(jsonObject.getString("fullName"));
-                    }
-                    if(jsonObject.getString("address")!=null){
-                        edtDiaChi.setText(jsonObject.getString("address"));
-                    }
-                    if(jsonObject.getString("specilization")!=null){
-                        edtKhoa.setText(jsonObject.getString("specilization"));
-                    }
-                    if(jsonObject.getString("city")!=null){
-                        edtQueQuan.setText(jsonObject.getString("city"));
-                    }
-                    if(jsonObject.getString("age")!=null){
-                        txtNamSinh.setText(jsonObject.getString("age"));
-                    }
-
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject a = jsonArray.getJSONObject(i);
+                    edtHoTen.setText(a.getString("doctorName"));
+                    edtKhoa.setText(a.getString("specilization"));
+                    edtDiaChi.setText(a.getString("address"));
+                    edtQueQuan.setText(a.getString("docEmail"));
+                    edtSdt.setText(a.getString("contactno"));
                 }
-                else Toast.makeText(getView().getContext(),"Không có người này !",Toast.LENGTH_LONG).show();
             } catch (JSONException e) {
                 e.printStackTrace();
                 Toast.makeText(getView().getContext(),"Có lỗi xảy ra !",Toast.LENGTH_LONG).show();
@@ -167,9 +162,9 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
                 postDataParams.put("id", id);
                 postDataParams.put("doctorName", edtHoTen.getText().toString());
                 postDataParams.put("address",edtDiaChi.getText().toString());
-                postDataParams.put("specilization", edtKhoa.getText().toString());
-                postDataParams.put("age", txtNamSinh.getText().toString());
-                Log.e("Sửa doctor",postDataParams.toString());
+                postDataParams.put("docEmail",edtQueQuan.getText().toString());
+                postDataParams.put("contactno",edtSdt.getText().toString());
+
                 return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/EditDoctor",postDataParams);
             }
             catch(Exception e){
@@ -180,7 +175,7 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
         protected void onPostExecute(String s) {
 
             try {
-
+                Log.e("Chuoi tra ve",s);
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {

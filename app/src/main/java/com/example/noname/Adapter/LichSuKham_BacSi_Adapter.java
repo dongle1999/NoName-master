@@ -34,18 +34,18 @@ public class LichSuKham_BacSi_Adapter extends ArrayAdapter<LichSuKham_BacSi> {
         LayoutInflater inflater=this.context.getLayoutInflater();
         View row=inflater.inflate(this.resource,null);
 
-        TextView txtTenBenhNhan= row.findViewById(R.id.txtTenBenhNhan_CustomLv_BacSi_LichSuKham);
+
         TextView txtSoDienThoai=row.findViewById(R.id.txtSoDienThoai_CustomLv_BacSi_LichSuKham);
         TextView txtTrangThai=row.findViewById(R.id.txtTrangThai_CustomLv_BacSi_LichSuKham);
         TextView txtNgayKham=row.findViewById(R.id.txtNgayKham_CustomLv_BacSi_LichSuKham);
-        TextView txtThoiGianKham=row.findViewById(R.id.txtThoiGianKham_CustomLv_BacSi_LichSuKham);
+
 
         LichSuKham_BacSi lichSuKham=this.objects.get(position);
-        txtTenBenhNhan.setText(lichSuKham.getTenBenhNhan());
+
         txtSoDienThoai.setText(lichSuKham.getSoDienThoai());
         txtTrangThai.setText(lichSuKham.getTrangThai());
         txtNgayKham.setText(lichSuKham.getNgayKham());
-        txtThoiGianKham.setText(lichSuKham.getThoiGianKham());
+
 
         return row;
     }

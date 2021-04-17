@@ -95,19 +95,23 @@ public class Fragment_BacSi_LichKham extends Fragment {
 
         @Override
         protected void onPostExecute(String s) {
-            Log.e("chuoi tra ve :", s);
-            try {
 
+            try {
+                Log.e("chuoi tra ve :", s);
                 JSONObject jsonObject = new JSONObject(s);
                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject a = jsonArray.getJSONObject(i);
                     String tt="";
-                    if(a.getString("userStatus").equals("0")&&a.getString("doctorStatus").equals("0")) tt="Hoạt Động";
+                    if(a.getString("userStatus").equals("0")&&a.getString("doctorStatus").equals("0"))
+                    {
+                        tt="Hoạt Động";
+                        listlskham.add(new lichsukham(i,a.getString("id"),a.getString("doctorSpecialization"),a.getString("userId"),a.getString("consultancyFees"),a.getString("appointmentDate"),a.getString("appointmentTime"),a.getString("postingDate"),tt));
+                        dsLichKham.add(new LichKham_BacSi(i,a.getString("id"),tt,a.getString("postingDate")));
+                    }
                     if(a.getString("userStatus").equals("1")||a.getString("doctorStatus").equals("1")) tt="Đã Hủy";
                     if(a.getString("userStatus").equals("2")&&a.getString("doctorStatus").equals("2")) tt="Hoàn Thành";
-                    listlskham.add(new lichsukham(i,a.getString("id"),a.getString("doctorSpecialization"),a.getString("userId"),a.getString("consultancyFees"),a.getString("appointmentDate"),a.getString("appointmentTime"),a.getString("postingDate"),tt));
-                    dsLichKham.add(new LichKham_BacSi(i,a.getString("id"),tt,a.getString("postingDate")));
+
 
                 }
                 lichKhamAdapter=new LichKham_BacSi_Adapter(getActivity(),R.layout.custom_listview_bac_si_lich_kham,dsLichKham);
@@ -165,7 +169,7 @@ public class Fragment_BacSi_LichKham extends Fragment {
                 b.setTitle("Thông tin lịch khám");
                 b.setMessage("Tên Bệnh Nhân: "+tenbs+"\nEmail:"+dc+"\nKhoa: "+ls.doctorSpecialization+"\nPhí: "+ls.consultancyFees+"\nNgày Khám: "+ls.appointmentDate+"\nThời Gian: "+ls.appointmentTime);
 
-                b.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                b.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                     @Override
 
                     public void onClick(DialogInterface dialog, int which)
@@ -184,6 +188,13 @@ public class Fragment_BacSi_LichKham extends Fragment {
                             new huylich(ls.id).execute("Huy lich kham");
                         }
 
+                    });
+                    b.setNegativeButton("Hoàn Thành", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            progressDialog.show();
+                            new Hoanthanh(ls.id).execute("Hoan thanh lich kham");
+                        }
                     });
                 }
 
@@ -242,6 +253,59 @@ public class Fragment_BacSi_LichKham extends Fragment {
                 {
                     progressDialog.dismiss();
                     Toast.makeText(getActivity(),"Hủy Thất Bại !",Toast.LENGTH_LONG).show();
+                }
+            } catch (JSONException e) {
+                progressDialog.dismiss();
+                e.printStackTrace();
+                Toast.makeText(getActivity(),"Có lỗi xảy ra !",Toast.LENGTH_LONG).show();
+            }
+
+            super.onPostExecute(s);
+        }
+    } class Hoanthanh extends AsyncTask<String, JSONObject,String> {
+
+        String name = "";
+
+        public Hoanthanh(String id) {
+
+            this.name = id;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+
+
+                // POST Request
+                JSONObject postDataParams = new JSONObject();
+                postDataParams.put("ApiKey", "DENTALMEDICAL");
+                postDataParams.put("id",name);
+
+                return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/Hoanthanh",postDataParams);
+            }
+            catch(Exception e){
+                return new String("Exception: " + e.getMessage());
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            Log.e("chuoi tra ve :",s);
+            try {
+
+                JSONObject jsonObject = new JSONObject(s);
+                if(jsonObject.getString("result").equals("ok"))
+                {
+                    progressDialog.dismiss();
+                    getActivity().recreate();
+                    Toast.makeText(getActivity(),"Đã Hoàn Thành !",Toast.LENGTH_LONG).show();
+
+                }
+                else
+
+                {
+                    progressDialog.dismiss();
+                    Toast.makeText(getActivity(),"Thất Bại !",Toast.LENGTH_LONG).show();
                 }
             } catch (JSONException e) {
                 progressDialog.dismiss();

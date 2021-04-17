@@ -9,13 +9,12 @@ public class LichSuKham_BacSi implements Serializable {
     public LichSuKham_BacSi() {
     }
 
-    public LichSuKham_BacSi(int ma, String tenBenhNhan, String soDienThoai, String trangThai, String ngayKham, String thoiGianKham) {
+    public LichSuKham_BacSi(int ma, String soDienThoai, String trangThai, String ngayKham) {
         this.ma = ma;
-        this.tenBenhNhan = tenBenhNhan;
         this.soDienThoai = soDienThoai;
         this.trangThai = trangThai;
         this.ngayKham = ngayKham;
-        this.thoiGianKham = thoiGianKham;
+
     }
 
     public int getMa() {

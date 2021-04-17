@@ -124,9 +124,9 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            Log.e("chuoi tra ve :",s);
-            try {
 
+            try {
+                Log.e("chuoi tra ve :",s);
                 JSONObject jsonObject = new JSONObject(s);
                 if(jsonObject.getString("result").equals("ok"))
                 {
