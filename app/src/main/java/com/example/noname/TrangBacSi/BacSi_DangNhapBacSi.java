@@ -69,16 +69,11 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
                 (prefname, MODE_PRIVATE);
         //tạo đối tượng Editor để lưu thay đổi
         SharedPreferences.Editor editor=pre.edit();
-
-
         //xóa mọi lưu trữ trước đó
         editor.clear();
-
         //lưu vào editor
         editor.putString("email", user);
         editor.putString("id", pwd);
-
-
         //chấp nhận lưu xuống file
         editor.commit();
     }

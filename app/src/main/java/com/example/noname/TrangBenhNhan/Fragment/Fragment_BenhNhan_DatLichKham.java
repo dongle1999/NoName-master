@@ -253,6 +253,7 @@ public class Fragment_BenhNhan_DatLichKham extends Fragment {
                 if(jsonObject.getString("result").equals("ok"))
                 {
                     dialog.dismiss();
+                    getActivity().recreate();
                     Toast.makeText(getView().getContext(),"Đặt lịch khám thành công !",Toast.LENGTH_LONG).show();
                 }
 

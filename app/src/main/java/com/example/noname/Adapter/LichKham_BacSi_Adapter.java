@@ -35,13 +35,11 @@ public class LichKham_BacSi_Adapter extends ArrayAdapter<LichKham_BacSi> {
         LayoutInflater inflater=this.context.getLayoutInflater();
         View row=inflater.inflate(this.resource,null);
 
-        TextView txtTenBenhNhan= row.findViewById(R.id.txtTenBenhNhan_CustomLv_BacSi_LichKham);
         TextView txtSoDienThoai=row.findViewById(R.id.txtSoDienThoai_CustomLv_BacSi_LichKham);
-        TextView txtNgayKham=row.findViewById(R.id.txtNgayKham_CustomLv_BacSi_LichKham);
-        TextView txtThoiGianKham=row.findViewById(R.id.txtThoiGianKham_CustomLv_BacSi_LichKham);
+        TextView txtNgayKham=row.findViewById(R.id.txttrangthai_CustomLv_BacSi_LichKham);
+        TextView txtThoiGianKham=row.findViewById(R.id.txtNgayKham_CustomLv_BacSi_LichKham);
 
         LichKham_BacSi lichKham=this.objects.get(position);
-        txtTenBenhNhan.setText(lichKham.getTenBenhNhan());
         txtSoDienThoai.setText(lichKham.getSoDienThoai());
         txtNgayKham.setText(lichKham.getNgayKham());
         txtThoiGianKham.setText(lichKham.getThoiGianKham());

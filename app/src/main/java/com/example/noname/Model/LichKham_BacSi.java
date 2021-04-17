@@ -9,9 +9,8 @@ public class LichKham_BacSi implements Serializable {
     public LichKham_BacSi() {
     }
 
-    public LichKham_BacSi(int ma, String tenBenhNhan, String soDienThoai, String ngayKham, String thoiGianKham) {
+    public LichKham_BacSi(int ma, String soDienThoai, String ngayKham, String thoiGianKham) {
         this.ma = ma;
-        this.tenBenhNhan = tenBenhNhan;
         this.soDienThoai = soDienThoai;
         this.ngayKham = ngayKham;
         this.thoiGianKham = thoiGianKham;
