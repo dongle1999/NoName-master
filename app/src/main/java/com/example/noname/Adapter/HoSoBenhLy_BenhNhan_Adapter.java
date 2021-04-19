@@ -37,7 +37,6 @@ public class HoSoBenhLy_BenhNhan_Adapter extends ArrayAdapter<HoSoBenhLy_BenhNha
 
         TextView txtLanKham=row.findViewById(R.id.txtLanKham_CustomLv_BenhNhan_HoSoBenhLy);
         TextView txtNgayKham=row.findViewById(R.id.txtNgayKham_CustomLv_BenhNhan_HoSoBenhLy);
-        TextView txtThoiGianKham=row.findViewById(R.id.txtThoiGianKham_CustomLv_BenhNhan_HoSoBenhLy);
 
         HoSoBenhLy_BenhNhan hoSo=this.objects.get(position);
         txtLanKham.setText(hoSo.getLanKham());

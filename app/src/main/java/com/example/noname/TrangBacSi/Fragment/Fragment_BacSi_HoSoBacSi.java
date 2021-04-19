@@ -34,8 +34,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Fragment_BacSi_HoSoBacSi extends Fragment {
     ProgressDialog progressDialog;
-    TextView txtNamSinh;
-    EditText edtHoTen,edtKhoa,edtDiaChi,edtQueQuan,edtSdt;
+    TextView txtNamSinh, txtHoTen,txtKhoa,txtDiaChi,txtQueQuan,txtSdt;
     Button btnCapNhap,btndoipass;
     String prefname="my_data";
     String id="" ;
@@ -46,11 +45,11 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_bac_si_ho_so_bac_si, container,false);
-        edtHoTen=view.findViewById(R.id.edtHoTen_Fragment_BacSi_HoSoBacSi);
-        edtKhoa=view.findViewById(R.id.edtKhoa_Fragment_BacSi_HoSoBacSi);
-        edtDiaChi=view.findViewById(R.id.edtNoiOHienTai_Fragment_BacSi_HoSoBacSi);
-        edtQueQuan=view.findViewById(R.id.edtQUeQuan_Fragment_BacSi_HoSoBacSi);
-        edtSdt=view.findViewById(R.id.edtSoDienThoai_Fragment_BacSi_HoSoBacSi);
+        txtHoTen=view.findViewById(R.id.txtHoTen_Fragment_BacSi_HoSoBacSi);
+        txtKhoa=view.findViewById(R.id.txtKhoa_Fragment_BacSi_HoSoBacSi);
+        txtDiaChi=view.findViewById(R.id.txtNoiOHienTai_Fragment_BacSi_HoSoBacSi);
+        txtQueQuan=view.findViewById(R.id.txtQUeQuan_Fragment_BacSi_HoSoBacSi);
+        txtSdt=view.findViewById(R.id.txtSoDienThoai_Fragment_BacSi_HoSoBacSi);
         btnCapNhap=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan);
         btndoipass=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan2);
         restoringPreferences();
@@ -133,11 +132,11 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject a = jsonArray.getJSONObject(i);
-                    edtHoTen.setText(a.getString("doctorName"));
-                    edtKhoa.setText(a.getString("specilization"));
-                    edtDiaChi.setText(a.getString("address"));
-                    edtQueQuan.setText(a.getString("docEmail"));
-                    edtSdt.setText(a.getString("contactno"));
+                    txtHoTen.setText(a.getString("doctorName"));
+                    txtKhoa.setText(a.getString("specilization"));
+                    txtDiaChi.setText(a.getString("address"));
+                    txtQueQuan.setText(a.getString("docEmail"));
+                    txtSdt.setText(a.getString("contactno"));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -160,10 +159,10 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
                 JSONObject postDataParams = new JSONObject();
                 postDataParams.put("ApiKey", "DENTALMEDICAL");
                 postDataParams.put("id", id);
-                postDataParams.put("doctorName", edtHoTen.getText().toString());
-                postDataParams.put("address",edtDiaChi.getText().toString());
-                postDataParams.put("docEmail",edtQueQuan.getText().toString());
-                postDataParams.put("contactno",edtSdt.getText().toString());
+                postDataParams.put("doctorName", txtHoTen.getText().toString());
+                postDataParams.put("address",txtDiaChi.getText().toString());
+                postDataParams.put("docEmail",txtQueQuan.getText().toString());
+                postDataParams.put("contactno",txtSdt.getText().toString());
 
                 return RequestHandler.sendPost("http://apiheal.000webhostapp.com/api/EditDoctor",postDataParams);
             }

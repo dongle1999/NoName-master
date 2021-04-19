@@ -12,11 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.noname.ChonNguoiDung;
 import com.example.noname.R;
 import com.example.noname.RequestHandler;
+import com.example.noname.TrangBacSi.BacSi_DangNhapBacSi;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,7 +25,7 @@ import org.json.JSONObject;
 public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
 
     Button btnDangNhap, btnDangKy_DangNhap;
-    ImageButton imgBack_DangNhapBenhNhan;
+    TextView txtDangNhapBacSi;
     EditText tdn , pass ;
     String prefname="my_data";
     ProgressDialog progress;
@@ -42,35 +43,37 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
+                /*if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
                     progress.show();
                     String us = tdn.getText().toString().trim();
                     String pas = pass.getText().toString().trim();
                     new login(us, pas).execute("http://dentalmedical.ddns.net:8088/api/Login");
 
                 }
-                else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();
-              //
+                else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();*/
+                startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this,Nav_TrangBenhNhan.class));
             }
         });
+
         btnDangKy_DangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, BenhNhan_DangKyBenhNhan.class));
             }
         });
-        imgBack_DangNhapBenhNhan.setOnClickListener(new View.OnClickListener() {
+        txtDangNhapBacSi.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, ChonNguoiDung.class));
+            public void onClick(View v) {
+                startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, BacSi_DangNhapBacSi.class));
             }
         });
+
     }
 
     private void controls() {
+        txtDangNhapBacSi=findViewById(R.id.txtDangNhap_BacSi);
         btnDangNhap=findViewById(R.id.btnDangNhap_BenhNhan);
         btnDangKy_DangNhap=findViewById(R.id.btnDangKy_DangNhap_BenhNhan);
-        imgBack_DangNhapBenhNhan=findViewById(R.id.imgBack_DangNhapBenhNhan);
         tdn=findViewById(R.id.edtSoDienThoai_DangNhap_BenhNhan);
         pass=findViewById(R.id.edtMatKhau_DangNhap_BenhNhan);
     }

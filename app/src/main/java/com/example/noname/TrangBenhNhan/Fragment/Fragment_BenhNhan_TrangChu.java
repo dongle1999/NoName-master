@@ -11,15 +11,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.noname.Blutooth.Scanblu;
 import com.example.noname.ChatBot.MainActivity;
 import com.example.noname.R;
 import com.example.noname.TrangBenhNhan.BenhNhan_HuongDanSoCapCuu;
 import com.example.noname.TrangBenhNhan.BenhNhan_NCOVI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fragment_BenhNhan_TrangChu extends Fragment {
 
     LinearLayout btnNCOVI, btnHuongDanSoCapCuu, btnChatVoiBacSi, btnBluScan;
+
+    ImageSlider img_slider;
+
 
     @Nullable
     @Override
@@ -29,7 +37,16 @@ public class Fragment_BenhNhan_TrangChu extends Fragment {
         btnHuongDanSoCapCuu=v.findViewById(R.id.btnHuongDanSoCapCuu_BenhNhan_TrangChu);
         btnBluScan=v.findViewById(R.id.btnBluScan_BenhNhan_TrangChu);
         btnChatVoiBacSi=v.findViewById(R.id.btnChatVoiBacSi_BenhNhan_TrangChu);
-        controls();
+        img_slider=v.findViewById(R.id.img_slider);
+
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.slider_1,null));
+        slideModels.add(new SlideModel(R.drawable.slider_2,null));
+        slideModels.add(new SlideModel(R.drawable.slider_3,null));
+        slideModels.add(new SlideModel(R.drawable.slider_4,null));
+        img_slider.setImageList(slideModels,true);
+
+
         events();
         return v;
     }
@@ -61,8 +78,4 @@ public class Fragment_BenhNhan_TrangChu extends Fragment {
         });
     }
 
-
-    private void controls() {
-
-    }
 }

@@ -14,11 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.noname.ChonNguoiDung;
 import com.example.noname.R;
 import com.example.noname.RequestHandler;
 import com.example.noname.TrangBenhNhan.BenhNhan_DangNhapBenhNhan;
-import com.example.noname.TrangBenhNhan.Nav_TrangBenhNhan;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,21 +42,23 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
+
+               /* if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
                     dialog.show();
                     String us = tdn.getText().toString().trim();
                     String pas = pass.getText().toString().trim();
                     new login(us, pas).execute("http://dentalmedical.ddns.net:8088/api/LoginDoctor");
 
                 }
-                else Toast.makeText(BacSi_DangNhapBacSi.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();
+                else Toast.makeText(BacSi_DangNhapBacSi.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();*/
+                startActivity(new Intent(BacSi_DangNhapBacSi.this, Nav_TrangBacSi.class));
             }
         });
 
         imgBack_DangNhapBacSi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BacSi_DangNhapBacSi.this, ChonNguoiDung.class));
+                startActivity(new Intent(BacSi_DangNhapBacSi.this, BenhNhan_DangNhapBenhNhan.class));
             }
         });
     }

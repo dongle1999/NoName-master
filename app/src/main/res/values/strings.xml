@@ -87,4 +87,7 @@
     <string name="title_NgayGioDangKy">Ngày giờ đăng ký</string>
     <string name="title_BluScan">BluScan</string>
     <string name="title_ChinhSuaHoSo">Chỉnh sửa hồ sơ</string>
+    <string name="title_ThemLichSuKhamBenh">Thêm lịch sử khám bệnh</string>
+    <string name="title_ChinhSuaHoSoBenhNhan">Chỉnh sửa hồ sơ bệnh nhân</string>
+    <string name="title_ChinhSua">Chỉnh sửa</string>
 </resources>

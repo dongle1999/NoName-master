@@ -54,7 +54,7 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/edtHoTen_ChinhSua_BacSi_HoSoBacSi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"

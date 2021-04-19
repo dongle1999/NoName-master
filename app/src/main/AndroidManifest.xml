@@ -29,28 +29,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TrangBacSi.Fragment.BacSi_ChinhSua_HoSoBacSi"></activity>
+        <activity android:name=".TrangBacSi.Fragment.BacSi_QuanLyBenhNhan_ChinhSuaHoSoBenhNhan"></activity>
+        <activity android:name=".TrangBacSi.Fragment.BacSi_ChinhSua_HoSoBacSi" />
         <activity android:name=".Blutooth.Scanblu" />
         <activity android:name=".TrangBenhNhan.BenhNhan_ChiTiet_HuongDanSoCapCuu" />
-        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyBenhNhan" />
+        <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyHoSoBenhNhan" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichSuKham" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_LichKham" />
         <activity android:name=".TrangBenhNhan.BenhNhan_DoiMatKhau" />
         <activity android:name=".TrangBacSi.Nav_TrangBacSi" />
         <activity android:name=".TrangBacSi.BacSi_DangNhapBacSi" />
         <activity android:name=".ChatBot.MainActivity" />
-        <activity android:name=".ChonNguoiDung">
+        <activity android:name=".TrangBenhNhan.NCOVI.HuongDanPhongDich" />
+        <activity android:name=".TrangBenhNhan.NCOVI.KhaiBaoYTe" />
+        <activity android:name=".TrangBenhNhan.NCOVI.ThongTinDich" />
+        <activity android:name=".TrangBenhNhan.BenhNhan_DangKyBenhNhan" />
+        <activity android:name=".TrangBenhNhan.BenhNhan_DangNhapBenhNhan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TrangBenhNhan.NCOVI.HuongDanPhongDich" />
-        <activity android:name=".TrangBenhNhan.NCOVI.KhaiBaoYTe" />
-        <activity android:name=".TrangBenhNhan.NCOVI.ThongTinDich" />
-        <activity android:name=".TrangBenhNhan.BenhNhan_DangKyBenhNhan" />
-        <activity android:name=".TrangBenhNhan.BenhNhan_DangNhapBenhNhan" />
         <activity
             android:name=".TrangBenhNhan.BenhNhan_ChatVoiBacSi"
             android:label="@string/title_ChatVoiBacSi" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,10 +17,17 @@
             android:background="#AAAA"
             android:orientation="vertical">
 
-            <ImageView
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/img_slider"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/colorDefault" />
+                android:layout_height="230dp"
+                app:auto_cycle="true"
+                app:placeholder="@drawable/background_gry"
+                app:error_image="@drawable/background_gry"
+                app:delay="0"
+                app:period="2000"
+                app:corner_radius="5"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,11 +52,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_NCOVI"
-                        android:textSize="18dp"
                         android:layout_gravity="center_horizontal"
+                        android:text="@string/title_NCOVI"
                         android:textColor="@color/colorText"
-                        />
+                        android:textSize="18dp" />
 
                 </LinearLayout>
 
@@ -65,15 +72,15 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:background="@drawable/im_huongdansocapcuu"/>
+                        android:background="@drawable/im_huongdansocapcuu" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/title_HuongDanSoCapCuu"
-                        android:textSize="18dp"
-                        android:textColor="@color/colorText"/>
+                        android:textColor="@color/colorText"
+                        android:textSize="18dp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -96,15 +103,15 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:background="@drawable/im_butooth"/>
+                        android:background="@drawable/im_butooth" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/title_BluScan"
-                        android:textSize="18dp"
-                        android:textColor="@color/colorText"/>
+                        android:textColor="@color/colorText"
+                        android:textSize="18dp" />
 
                 </LinearLayout>
 
@@ -121,15 +128,15 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:background="@drawable/im_chat"/>
+                        android:background="@drawable/im_chat" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/title_ChatVoiBacSi"
-                        android:textSize="18dp"
-                        android:textColor="@color/colorText"/>
+                        android:textColor="@color/colorText"
+                        android:textSize="18dp" />
 
                 </LinearLayout>
             </LinearLayout>

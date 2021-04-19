@@ -35,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=":"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/txtLanKham_CustomLv_BenhNhan_HoSoBenhLy"
@@ -45,7 +45,7 @@
                     android:text="@string/title_LanKham"
                     android:textSize="20dp" />
             </LinearLayout>
-   
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -72,21 +72,6 @@
                     android:layout_marginLeft="3dp"
                     android:text="ngày/tháng/năm" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"
-                    android:text="|" />
-
-                <TextView
-                    android:id="@+id/txtThoiGianKham_CustomLv_BenhNhan_HoSoBenhLy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="3dp"
-                    android:text="giờ:phút" />
             </LinearLayout>
 
 
