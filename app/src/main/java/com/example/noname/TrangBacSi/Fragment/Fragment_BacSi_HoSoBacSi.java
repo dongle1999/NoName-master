@@ -34,23 +34,22 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Fragment_BacSi_HoSoBacSi extends Fragment {
     ProgressDialog progressDialog;
-    TextView txtNamSinh;
+
     EditText edtHoTen,edtKhoa,edtDiaChi,edtQueQuan,edtSdt;
     Button btnCapNhap,btndoipass;
     String prefname="my_data";
     String id="" ;
-    Calendar calendar=Calendar.getInstance();
-    SimpleDateFormat sdfNgay=new SimpleDateFormat("dd/MM/yyyy");
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_bac_si_ho_so_bac_si, container,false);
-        edtHoTen=view.findViewById(R.id.edtHoTen_Fragment_BacSi_HoSoBacSi);
-        edtKhoa=view.findViewById(R.id.edtKhoa_Fragment_BacSi_HoSoBacSi);
-        edtDiaChi=view.findViewById(R.id.edtNoiOHienTai_Fragment_BacSi_HoSoBacSi);
-        edtQueQuan=view.findViewById(R.id.edtQUeQuan_Fragment_BacSi_HoSoBacSi);
-        edtSdt=view.findViewById(R.id.edtSoDienThoai_Fragment_BacSi_HoSoBacSi);
+        edtHoTen=view.findViewById(R.id.txtHoTen_Fragment_BacSi_HoSoBacSi);
+        edtKhoa=view.findViewById(R.id.txtKhoa_Fragment_BacSi_HoSoBacSi);
+        edtDiaChi=view.findViewById(R.id.txtNoiOHienTai_Fragment_BacSi_HoSoBacSi);
+        edtQueQuan=view.findViewById(R.id.txtQUeQuan_Fragment_BacSi_HoSoBacSi);
+        edtSdt=view.findViewById(R.id.txtSoDienThoai_Fragment_BacSi_HoSoBacSi);
         btnCapNhap=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan);
         btndoipass=view.findViewById(R.id.btnDangKy_DangKy_BenhNhan2);
         restoringPreferences();
@@ -83,24 +82,6 @@ public class Fragment_BacSi_HoSoBacSi extends Fragment {
         });
     }
 
-    private void xuLyHienThiNgay() {
-        DatePickerDialog.OnDateSetListener listener=new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                calendar.set(Calendar.YEAR,year);
-                calendar.set(Calendar.MONTH,month);
-                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-
-                txtNamSinh.setText(sdfNgay.format(calendar.getTime()));
-            }
-        };
-        DatePickerDialog datePickerDialog=new DatePickerDialog(getActivity(), listener,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH));
-
-        datePickerDialog.show();
-    }
 
     class Getdoctor extends AsyncTask<String, JSONObject,String> {
         private  String id ;

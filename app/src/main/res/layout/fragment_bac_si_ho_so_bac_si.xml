@@ -27,7 +27,7 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtHoTen_Fragment_BacSi_HoSoBacSi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -52,7 +52,7 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtKhoa_Fragment_BacSi_HoSoBacSi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -77,7 +77,7 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtNoiOHienTai_Fragment_BacSi_HoSoBacSi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -102,7 +102,7 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtQUeQuan_Fragment_BacSi_HoSoBacSi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -127,7 +127,7 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="20dp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtSoDienThoai_Fragment_BacSi_HoSoBacSi"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -173,15 +173,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:gravity="bottom|right">
-            <TextView
-                android:id="@+id/txtChinhSuaHoSo_Fragment_BacSi_HoSoBacSi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_ChinhSuaHoSo"
-                android:textSize="20dp"
-                android:textColor="@color/colorBlack" />
-            </LinearLayout>
+                android:gravity="bottom|right"/>
 >>>>>>> 9f651d4783d9e7a70aa5b0df2a9e974dd2cfb1c1
         </LinearLayout>
     </ScrollView>
