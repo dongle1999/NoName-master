@@ -1,10 +1,14 @@
 package com.example.noname.TrangBenhNhan;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +38,16 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dang_nhap_tk_benh_nhan);
         controls();
+        // Ask for location permission if not already allowed
+        ActivityCompat.requestPermissions(
+                this,
+                new String[]
+                        {
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.ACCESS_COARSE_LOCATION,
+                                Manifest.permission.ACCESS_BACKGROUND_LOCATION,
+                                Manifest.permission.READ_EXTERNAL_STORAGE
+                        }, 0);
         progress=new ProgressDialog(BenhNhan_DangNhapBenhNhan.this);
         progress.setTitle("Loading");
         events();
@@ -43,15 +57,15 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
+                if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
                     progress.show();
                     String us = tdn.getText().toString().trim();
                     String pas = pass.getText().toString().trim();
                     new login(us, pas).execute("http://dentalmedical.ddns.net:8088/api/Login");
 
                 }
-                else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();*/
-                startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this,Nav_TrangBenhNhan.class));
+                else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();
+
             }
         });
 

@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.noname.Blutooth.Scanblu;
 import com.example.noname.ChatBot.MainActivity;
 import com.example.noname.R;
 import com.example.noname.TrangBenhNhan.BenhNhan_HuongDanSoCapCuu;
@@ -68,7 +67,7 @@ public class Fragment_BenhNhan_TrangChu extends Fragment {
         btnBluScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Scanblu.class));
+                startActivity(new Intent(getActivity(), com.example.noname.Blutooth.MainActivity.class));
             }
         });
         btnChatVoiBacSi.setOnClickListener(new View.OnClickListener() {
