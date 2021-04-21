@@ -61,8 +61,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:text="@string/title_ThoiGianKham"
-                    android:textStyle="bold"/>
+                    android:text="Thời gian đăng ký"
+                    android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,13 +85,6 @@
                     android:layout_marginRight="3dp"
                     android:text="|" />
 
-                <TextView
-                    android:id="@+id/txtThoiGianKham_CustomLv_BacSi_QuanLyBenhNhan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="3dp"
-                    android:text="giờ:phút" />
             </LinearLayout>
 
 

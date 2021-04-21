@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 public class QuanLyBenhNhan_BacSi implements Serializable {
     private int ma;
-    private String tenBenhNhan, soDienThoai, ngayKham, thoiGianKham;
+    private String tenBenhNhan, soDienThoai, ngayKham;
 
     public QuanLyBenhNhan_BacSi() {
     }
 
-    public QuanLyBenhNhan_BacSi(int ma, String tenBenhNhan, String soDienThoai, String ngayKham, String thoiGianKham) {
+    public QuanLyBenhNhan_BacSi(int ma, String tenBenhNhan, String soDienThoai, String ngayKham) {
         this.ma = ma;
         this.tenBenhNhan = tenBenhNhan;
         this.soDienThoai = soDienThoai;
         this.ngayKham = ngayKham;
-        this.thoiGianKham = thoiGianKham;
+
     }
 
     public int getMa() {
@@ -49,11 +49,5 @@ public class QuanLyBenhNhan_BacSi implements Serializable {
         this.ngayKham = ngayKham;
     }
 
-    public String getThoiGianKham() {
-        return thoiGianKham;
-    }
 
-    public void setThoiGianKham(String thoiGianKham) {
-        this.thoiGianKham = thoiGianKham;
-    }
 }

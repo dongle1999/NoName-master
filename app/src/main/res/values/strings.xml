@@ -6,7 +6,7 @@
 
     //Title
     <string name="title_TrangChu">Trang chủ</string>
-    <string name="title_HoSoBenhNhan">Hồ sơ bệnh nhân</string>
+    <string name="title_HoSoBenhNhan">Hồ sơ người dùng</string>
     <string name="title_HoSoBacSi">Hồ sơ bác sĩ</string>
     <string name="title_DatLichKham">Đặt Lịch Khám</string>
     <string name="title_LichSuKhamBenh">Lịch sử khám bệnh</string>

@@ -36,13 +36,13 @@ public class QuanLyBenhNhan_BacSi_Adapter extends ArrayAdapter<QuanLyBenhNhan_Ba
         TextView txtTenBenhNhan= row.findViewById(R.id.txtTenBenhNhan_CustomLv_BacSi_QuanLyBenhNhan);
         TextView txtSoDienThoai=row.findViewById(R.id.txtSoDienThoai_CustomLv_BacSi_QuanLyBenhNhan);
         TextView txtNgayKham=row.findViewById(R.id.txtNgayKham_CustomLv_BacSi_QuanLyBenhNhan);
-        TextView txtThoiGianKham=row.findViewById(R.id.txtThoiGianKham_CustomLv_BacSi_QuanLyBenhNhan);
+
 
         QuanLyBenhNhan_BacSi quanLyBenhNhan=this.objects.get(position);
         txtTenBenhNhan.setText(quanLyBenhNhan.getTenBenhNhan());
         txtSoDienThoai.setText(quanLyBenhNhan.getSoDienThoai());
         txtNgayKham.setText(quanLyBenhNhan.getNgayKham());
-        txtThoiGianKham.setText(quanLyBenhNhan.getThoiGianKham());
+
 
         return row;
     }
