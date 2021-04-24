@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,7 @@ import androidx.fragment.app.Fragment;
 import com.example.noname.Adapter.QuanLyBenhNhan_BacSi_Adapter;
 
 import com.example.noname.Model.QuanLyBenhNhan_BacSi;
-import com.example.noname.Model.benhnhan;
+import com.example.noname.Model.BenhNhan;
 import com.example.noname.R;
 import com.example.noname.RequestHandler;
 
@@ -40,7 +39,7 @@ public class Fragment_BacSi_QuanLyBenhNhan extends Fragment {
     ListView lvQuanLyBenhNhan;
     ArrayList<QuanLyBenhNhan_BacSi>dsQuanLy;
     QuanLyBenhNhan_BacSi_Adapter quanLyBenhNhanAdapter;
-    ArrayList<benhnhan>listitem ;
+    ArrayList<BenhNhan>listitem ;
 
     @Nullable
     @Override
@@ -53,7 +52,7 @@ public class Fragment_BacSi_QuanLyBenhNhan extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(getActivity(),BacSi_ChiTiet_QuanLyHoSoBenhNhan.class);
-                benhnhan a = listitem.get(position);
+                BenhNhan a = listitem.get(position);
                 Bundle bundle=new Bundle();
                 bundle.putString("ID",a.ID);
                 bundle.putString("Docid",a.Docid);
@@ -115,7 +114,7 @@ public class Fragment_BacSi_QuanLyBenhNhan extends Fragment {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject a = jsonArray.getJSONObject(i);
                     dsQuanLy.add(new QuanLyBenhNhan_BacSi(1,a.getString("PatientName"),a.getString("PatientContno"),a.getString("CreationDate")));
-                    listitem.add(new benhnhan(i,a.getString("ID"),a.getString("Docid"),
+                    listitem.add(new BenhNhan(i,a.getString("ID"),a.getString("Docid"),
                             a.getString("PatientName"),a.getString("PatientContno"),
                             a.getString("PatientEmail"),
                             a.getString("PatientGender"),

@@ -10,15 +10,21 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-feature    android:name="android.hardware.bluetooth_le" android:required="false"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" tools:ignore="ProtectedPermissions" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,7 +33,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TrangBacSi.Fragment.BacSi_QuanLyBenhNhan_ChinhSuaHoSoBenhNhan"></activity>
+        <activity android:name=".Blutooth.LichSuTiepXuc"></activity>
+        <activity android:name=".TrangBacSi.Fragment.BacSi_QuanLyBenhNhan_ChinhSuaHoSoBenhNhan" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChinhSua_HoSoBacSi" />
         <activity android:name=".TrangBenhNhan.BenhNhan_ChiTiet_HuongDanSoCapCuu" />
         <activity android:name=".TrangBacSi.Fragment.BacSi_ChiTiet_QuanLyHoSoBenhNhan" />
@@ -41,9 +48,9 @@
         <activity android:name=".TrangBenhNhan.NCOVI.KhaiBaoYTe" />
         <activity android:name=".TrangBenhNhan.NCOVI.ThongTinDich" />
         <activity android:name=".TrangBenhNhan.BenhNhan_DangKyBenhNhan" />
-        <activity android:name=".Blutooth.MainActivity">
-
-        </activity>
+        <activity
+            android:name=".Blutooth.BlueScan"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".TrangBenhNhan.BenhNhan_DangNhapBenhNhan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TrangBenhNhan.BenhNhan_HuongDanSoCapCuu">
+    tools:context=".Blutooth.BlueScan">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -19,24 +18,42 @@
             android:background="@color/colorDefault"
             android:fontFamily="sans-serif"
             android:gravity="center"
-            android:text="@string/title_HuongDanSoCapCuu"
+            android:text="@string/title_BluScan"
             android:textColor="#ffff"
             android:textSize="25dp"
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/imgBack_HuognDanSoCapCuu"
+            android:id="@+id/imgBack_BlueScan"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="left|center"
             android:background="@color/colorDefault"
             android:src="@drawable/ic_back" />
     </FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/bgr_bluescan" />
 
-    <ListView
-        android:id="@+id/lvBenhNhan_HuongDanSoCapCuu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:listSelector="@color/colorListView"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center">
 
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:background="@drawable/radar"/>
+
+        </LinearLayout>
+            <Button
+                android:id="@+id/btnLichSuTiepXuc_BlueScan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_LichSuTiepXuc"
+                android:layout_gravity="center"
+                android:background="@drawable/edit2"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
 </LinearLayout>

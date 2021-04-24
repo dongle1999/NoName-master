@@ -57,14 +57,16 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
+                /*if(!tdn.getText().toString().equals("")&&!pass.getText().toString().equals("")) {
                     progress.show();
                     String us = tdn.getText().toString().trim();
                     String pas = pass.getText().toString().trim();
                     new login(us, pas).execute("http://dentalmedical.ddns.net:8088/api/Login");
 
                 }
-                else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();
+                else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();*/
+
+                startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this,Nav_TrangBenhNhan.class));
 
             }
         });

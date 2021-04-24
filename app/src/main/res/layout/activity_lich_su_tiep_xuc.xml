@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TrangBenhNhan.BenhNhan_HuongDanSoCapCuu">
+    tools:context=".Blutooth.LichSuTiepXuc">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -19,13 +19,13 @@
             android:background="@color/colorDefault"
             android:fontFamily="sans-serif"
             android:gravity="center"
-            android:text="@string/title_HuongDanSoCapCuu"
+            android:text="@string/title_LichSuTiepXuc"
             android:textColor="#ffff"
             android:textSize="25dp"
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/imgBack_HuognDanSoCapCuu"
+            android:id="@+id/imgBack_LichSuTiepXuc"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="left|center"
@@ -34,7 +34,7 @@
     </FrameLayout>
 
     <ListView
-        android:id="@+id/lvBenhNhan_HuongDanSoCapCuu"
+        android:id="@+id/lvLichSuTiepXuc_BlueScan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:listSelector="@color/colorListView"/>

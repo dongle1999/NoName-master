@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.noname.Blutooth.BlueScan;
 import com.example.noname.ChatBot.MainActivity;
 import com.example.noname.R;
 import com.example.noname.TrangBenhNhan.BenhNhan_HuongDanSoCapCuu;
@@ -36,7 +37,7 @@ public class Fragment_BenhNhan_TrangChu extends Fragment {
         btnHuongDanSoCapCuu=v.findViewById(R.id.btnHuongDanSoCapCuu_BenhNhan_TrangChu);
         btnBluScan=v.findViewById(R.id.btnBluScan_BenhNhan_TrangChu);
         btnChatVoiBacSi=v.findViewById(R.id.btnChatVoiBacSi_BenhNhan_TrangChu);
-        img_slider=v.findViewById(R.id.img_slider);
+        img_slider=v.findViewById(R.id.img_slider_BenhNhan_TrangChu);
 
         List<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.slider_1,null));
@@ -67,7 +68,7 @@ public class Fragment_BenhNhan_TrangChu extends Fragment {
         btnBluScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), com.example.noname.Blutooth.MainActivity.class));
+                startActivity(new Intent(getActivity(), BlueScan.class));
             }
         });
         btnChatVoiBacSi.setOnClickListener(new View.OnClickListener() {
