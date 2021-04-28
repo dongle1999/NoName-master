@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
 
     Button btnDangNhap, btnDangKy_DangNhap;
-    TextView txtDangNhapBacSi;
+    TextView txtDangNhapBacSi, txtQuenMatKhau;
     EditText tdn , pass ;
     String prefname="my_data";
     ProgressDialog progress;
@@ -83,6 +83,12 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
                 startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this, BacSi_DangNhapBacSi.class));
             }
         });
+        txtQuenMatKhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this,BenhNhan_QuenMatKhau.class));
+            }
+        });
 
     }
 
@@ -92,6 +98,7 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
         btnDangKy_DangNhap=findViewById(R.id.btnDangKy_DangNhap_BenhNhan);
         tdn=findViewById(R.id.edtSoDienThoai_DangNhap_BenhNhan);
         pass=findViewById(R.id.edtMatKhau_DangNhap_BenhNhan);
+        txtQuenMatKhau=findViewById(R.id.txtQuenMatKhau_BenhNhan);
     }
     public void savingPreferences(String user, String pwd)
     {

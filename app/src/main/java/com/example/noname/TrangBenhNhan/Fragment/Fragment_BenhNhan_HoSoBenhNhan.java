@@ -23,9 +23,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.noname.R;
 import com.example.noname.RequestHandler;
-import com.example.noname.TrangBenhNhan.BenhNhan_DangKyBenhNhan;
-import com.example.noname.TrangBenhNhan.BenhNhan_DangNhapBenhNhan;
 import com.example.noname.TrangBenhNhan.BenhNhan_DoiMatKhau;
+import com.example.noname.TrangBenhNhan.BenhNhan_QuenMatKhau;
 
 import org.json.JSONException;
 import org.json.JSONObject;
