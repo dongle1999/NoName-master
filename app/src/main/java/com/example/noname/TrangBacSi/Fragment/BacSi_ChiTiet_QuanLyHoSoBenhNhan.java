@@ -3,7 +3,6 @@ package com.example.noname.TrangBacSi.Fragment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -18,10 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.noname.Adapter.HoSoBenhLy_BenhNhan_Adapter;
+import com.example.noname.Adapter.LichSuKham_ChiTietQuanLyHoSoBenhNhan_BacSi_Adapter;
 import com.example.noname.Model.HoSoBenhLy_BenhNhan;
+import com.example.noname.Model.LichSuKham_ChiTietQuanLyHoSoBenhNhan_BacSi;
 import com.example.noname.R;
 import com.example.noname.RequestHandler;
-import com.example.noname.TrangBenhNhan.Fragment.Fragment_BenhNhan_HoSoBenhLy;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +30,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class BacSi_ChiTiet_QuanLyHoSoBenhNhan extends AppCompatActivity {
+
+    ListView lvLichSuKhamBenh;
+    ArrayList<LichSuKham_ChiTietQuanLyHoSoBenhNhan_BacSi>dsLichSu;
+    LichSuKham_ChiTietQuanLyHoSoBenhNhan_BacSi_Adapter lichSuAdapter;
+
     String id ;
     ImageButton imgBack;
     Button btnThemLichSuKhamBenh;
@@ -45,6 +50,8 @@ public class BacSi_ChiTiet_QuanLyHoSoBenhNhan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bac_si_chi_tiet_quan_ly_ho_so_benh_nhan);
         controls();
+        event();
+
         callerIntent=getIntent();
         packageFromCaller=
                 callerIntent.getBundleExtra("data");
@@ -57,7 +64,9 @@ public class BacSi_ChiTiet_QuanLyHoSoBenhNhan extends AppCompatActivity {
         gt.setText(packageFromCaller.getString("PatientGender"));
         ngay.setText(packageFromCaller.getString("CreationDate"));
         new getlankham().execute("lay thong tin ls kham");
-        event();
+
+
+
 
     }
 
@@ -108,6 +117,12 @@ public class BacSi_ChiTiet_QuanLyHoSoBenhNhan extends AppCompatActivity {
                 });
 
                 b.create().show();
+            }
+        });
+        btnThemLichSuKhamBenh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BacSi_ChiTiet_QuanLyHoSoBenhNhan.this,BacSi_ThemLichSuKhamBenhNhan.class));
             }
         });
     }

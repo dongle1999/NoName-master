@@ -91,4 +91,5 @@
     <string name="title_ChinhSuaHoSoBenhNhan">Chỉnh sửa hồ sơ bệnh nhân</string>
     <string name="title_ChinhSua">Chỉnh sửa</string>
     <string name="title_LichSuTiepXuc">Lịch sử tiếp xúc</string>
+    <string name="title_MaKham">Mã khám</string>
 </resources>
