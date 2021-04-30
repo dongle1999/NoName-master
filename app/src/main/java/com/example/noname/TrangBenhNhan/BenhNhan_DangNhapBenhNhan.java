@@ -66,6 +66,10 @@ public class BenhNhan_DangNhapBenhNhan extends AppCompatActivity {
                 }
                 else Toast.makeText(BenhNhan_DangNhapBenhNhan.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();
 
+
+                //startActivity(new Intent(BenhNhan_DangNhapBenhNhan.this,Nav_TrangBenhNhan.class));
+
+
             }
         });
 

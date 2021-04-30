@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:textAlignment="center"
     tools:context=".Blutooth.BlueScan">
 
     <FrameLayout
@@ -31,29 +32,45 @@
             android:background="@color/colorDefault"
             android:src="@drawable/ic_back" />
     </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/bgr_bluescan" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_Canhbao_BlueScan"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:text="Chưa phát hiện người nhiễm hoặc nghi nhiễm gần bạn !"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center">
+
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/bgr_bluescan" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="250dp"
-            android:gravity="center">
+            android:background="@drawable/radar" />
 
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:background="@drawable/radar"/>
+    </LinearLayout>
 
-        </LinearLayout>
-            <Button
-                android:id="@+id/btnLichSuTiepXuc_BlueScan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_LichSuTiepXuc"
-                android:layout_gravity="center"
-                android:background="@drawable/edit2"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
+    <Button
+        android:id="@+id/btnLichSuTiepXuc_BlueScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/edit2"
+        android:text="@string/title_LichSuTiepXuc" />
 </LinearLayout>

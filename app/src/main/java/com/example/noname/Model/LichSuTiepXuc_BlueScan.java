@@ -4,14 +4,15 @@ import java.io.Serializable;
 
 public class LichSuTiepXuc_BlueScan implements Serializable {
     private int ma;
-    private String id_Blt;
+    private String id_Blt,sl;
 
     public LichSuTiepXuc_BlueScan() {
     }
 
-    public LichSuTiepXuc_BlueScan(int ma, String id_Blt) {
+    public LichSuTiepXuc_BlueScan(int ma, String id_Blt,String sl) {
         this.ma = ma;
         this.id_Blt = id_Blt;
+        this.sl=sl;
     }
 
     public String getId_Blt() {
@@ -28,5 +29,13 @@ public class LichSuTiepXuc_BlueScan implements Serializable {
 
     public void setMa(int ma) {
         this.ma = ma;
+    }
+
+    public String getSl() {
+        return sl;
+    }
+
+    public void setSl(String sl) {
+        this.sl = sl;
     }
 }

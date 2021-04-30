@@ -35,9 +35,11 @@ public class LichSuTiepXuc_BlueScan_Adapter extends ArrayAdapter<LichSuTiepXuc_B
         View row=inflater.inflate(this.resource,null);
 
         TextView txtID=row.findViewById(R.id.txtID_CustomLv_LichSuTiepXuc_BlueScan);
+        TextView txtsl=row.findViewById(R.id.txtsl_CustomLv_LichSuTiepXuc_BlueScan);
 
         LichSuTiepXuc_BlueScan id=this.objects.get(position);
         txtID.setText(id.getId_Blt());
+        txtsl.setText(id.getSl());
 
         return row;
     }

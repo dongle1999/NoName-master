@@ -51,6 +51,8 @@ public class BacSi_DangNhapBacSi extends AppCompatActivity {
 
                 }
                 else Toast.makeText(BacSi_DangNhapBacSi.this,"Lỗi Đăng Nhập !",Toast.LENGTH_LONG).show();
+               // startActivity(new Intent(BacSi_DangNhapBacSi.this,Nav_TrangBacSi.class));
+
             }
         });
 

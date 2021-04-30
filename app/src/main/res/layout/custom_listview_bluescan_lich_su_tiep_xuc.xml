@@ -10,9 +10,19 @@
 
         <TextView
             android:id="@+id/txtID_CustomLv_LichSuTiepXuc_BlueScan"
-            android:layout_width="match_parent"
+            android:layout_width="169dp"
             android:layout_height="wrap_content"
+            android:gravity="left"
             android:text="ID Blt"
             android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txtsl_CustomLv_LichSuTiepXuc_BlueScan"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="TextView"
+            android:textSize="25sp" />
     </LinearLayout>
 </LinearLayout>
